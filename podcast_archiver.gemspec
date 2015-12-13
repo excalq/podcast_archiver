@@ -7,11 +7,13 @@ Gem::Specification.new do |spec|
   spec.name          = "podcast_archiver"
   spec.version       = PodcastArchiver::VERSION
   spec.authors       = ["Arthur Ketcham"]
-  spec.email         = ["arthur@gowatchit.com"]
+  spec.email         = ["arthur@klassica.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A simple tool to archive or mirror an audio or video RSS podcast.}
+  spec.description   = %q{This tool enables cloning of a given RSS or podcast feed, downloading selected (or all)
+    media files locally, as well as generating a new RSS file with links to the downloaded media. Media files can have
+    their id metadata tags set using metadata from the original RSS.}
+  spec.homepage      = "https://github.com/excalq/podcast_archiver"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -29,4 +31,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "awesome_print"
+
 end

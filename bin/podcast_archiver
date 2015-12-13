@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+require 'awesome_print' # DEV DEBUGGING ONLY
+require __dir__ + '/../lib/podcast_archiver'
+require 'ostruct'
+require 'optparse'
+require 'yaml'
+
+options = {}
+class PodcastArchiverCLI
+
+  attr_accessor :options
+
+  def initialize(args)
+    self.options = parse_opts(args)
+    pa = PodcastArchiver::PodcastArchiver.new(options)
+
+  end
+
+
+  def parse_opts(args)
+    # The options specified on the command line will be collected in *options*.
+    # We set default values here.
+    options = OpenStruct.new
+    options.quiet = false
+
+    opt_parser = OptionParser.new do |opts|
+      opts.banner = "Usage: podcast_archiver RSS_URL [options]"
+
+      options.input_rss = args.first
+
+      opts.separator ""
+      opts.separator "Common options:"
+
+      opts.on('-o', '--output_dir NAME', 'Output Dirertory') { |v| options.output_dir = v }
+      opts.on('-l', '--limit N', 'Download only N items') { |v| options.limit = v }
+      opts.on('--offset N', Integer, 'Starting offset') { |v| options.offset = v }
+      opts.on('-n', '--nice', 'Throttle download speeds.') { |v| options.nice = v }
+      opts.on('-b', '--baseurl NEW_URL_BASE', 'Prefix all media urls in the output RSS with this url/path.') { |v| options.baseurl = v }
+      opts.on('-q', '--quiet', 'Run quietly, only errors are shown.') { |v| options.quiet = true }
+      opts.on('--dry-run', 'Only print the titles and new urls.') { |v| options.dry_run = v }
+
+      opts.on_tail("-h", "--help", "Show this message") do
+        puts opts
+        exit
+      end
+    end
+
+    opt_parser.parse!(args)
+    awesome_print options
+    options
+  end
+
+end
+
+PodcastArchiverCLI.new(ARGV)
+
