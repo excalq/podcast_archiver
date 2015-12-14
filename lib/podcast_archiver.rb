@@ -5,6 +5,11 @@ require_relative 'podcast_archiver/version'
 
 require 'awesome_print' # DEV DEBUGGING ONLY
 
+# Project TODO:
+# 1. Provide ATOM support
+# 2. Support ATOM pagination
+# 3. Provide logging support (using logger passed to gem)
+#
 
 module PodcastArchiver
   OptionsStruct = Struct.new(
@@ -29,10 +34,11 @@ module PodcastArchiver
 
     def initialize(url, outdir, options={})
       raise ArgumentError, "url and output dir must be given." if (url.nil? || outdir.nil?)
+      puts "WARNING: Directory #{outdir} is not empty!." unless Dir.glob("#{outdir}/{*,.*}").empty?
 
       @input_rss = RssHandler.new(url, options)
+      Dir.mkdir(outdir, 0600) unless Dir.exists?(outdir)
       @output_dir = Dir.new(outdir)
-      raise ArgumentError, "Directory #{outdir} does not exist." unless Dir.exists? @output_dir
       @options = OptionsStruct.new(*options.values_at(*OptionsStruct.members))
 
       puts "Running with options: #{options.inspect}" unless @options.quiet
