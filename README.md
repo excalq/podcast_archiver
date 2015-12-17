@@ -1,15 +1,14 @@
 # PodcastArchiver
 
+**[NOTE: This is a work under active development. A usable version should be available be 
+20 December 2015!]**
+
 A simple tool to archive or mirror an audio or video RSS podcast.
 
 This tool enables cloning of a given RSS or podcast feed, downloading selected (or all) media files locally, as well as 
 generating a new RSS file with links to the downloaded media. Media files can have their id metadata tags set using 
 metadata from the original RSS.
 
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/podcast_archiver`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -29,7 +28,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This can be used in two ways: either invoked via the command line (not Rake or IRB), or as a
+gem embedded within a larger project.
+
+To invoke via CLI: Run `bin/podcast_archiver RSS_URL [options]`
+
+Run `bin/podcast_archiver --help` for detailed options.
+
+To invoke in a project, interface with the `PodcastArchiver` module. The `load()` method returns
+a `PodcastArchiver::BackgroundWorker` instance.
+
 
 ## Development
 
