@@ -7,12 +7,12 @@
         <description>Free web building tutorials</description>
         <item>
             <title>RSS Tutorial</title>
-            <link>{{URL-GOES-HERE}}</link>
+            <link>/Users/arthur/Hacking/Ruby/podcast_archiver/spec/resources/empty.ogg</link>
             <description>New RSS tutorial on W3Schools</description>
         </item>
         <item>
             <title>JSON Tutorial</title>
-            <link>{{URL-GOES-HERE}}</link>
+            <link>/Users/arthur/Hacking/Ruby/podcast_archiver/spec/resources/empty.ogg</link>
             <description>New JSON tutorial on W3Schools</description>
     </item>
     </channel>

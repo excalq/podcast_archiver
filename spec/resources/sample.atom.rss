@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title>King County Library Science Collections</title>
+    <link href="http://www.kcls.org/collections/science/popular"/>
+    <updated>2015-12-14T10:34:22Z</updated>
+    <id>http://www.kcls.org/data-source/non-fiction/science/popular.rss</id>
+    <subtitle>Collections: Science > Popular</subtitle>
+    <link rel="alternate" type="text/html" hreflang="en" href="http://www.kcls.org/collections/science/popular"/>
+    <link rel="self" type="application/atom+xml" href="http://www.kcls.org/collections/science/popular.rss"/>
+    <link rel="first" href="http://www.kcls.org/collections/science/popular.rss"/>
+    <link rel="next" href="http://www.kcls.org/collections/science/popular.rss?page=2"/>
+    <link rel="last" href="http://www.kcls.org/collections/science/popular.rss?page=13"/>
+    <entry>
+        <id>demon-haunted-wo1339320.html</id>
+        <title>The Demon Haunted World</title>
+        <author>
+            <name>Carl Sagan</name>
+        </author>
+        <updated>2009-01-23T10:03:08Z</updated>
+        <published>1996-03-05T00:00:00Z</published>
+        <link rel="alternate" type="text/html" hreflang="en" href="http://www.kcls.org/demon-haunted-wo1339320.html"/>
+        <link rel="enclosure" type="audio/ogg" href="http://www.klcs.org/audio-books/demon-haunted-wo1339320.ogg"
+              length="123456789" />
+        <summary>The Demon-Haunted World: Science as a Candle in the Dark is a 1995 book by astrophysicist
+            Carl Sagan. In the book, Sagan aims to explain the scientific method to laypeople, and to
+            encourage people to learn critical and skeptical thinking.
+        </summary>
+    </entry>
+    <entry>
+        <id>ancerstors-tale-8574685</id>
+        <title>The Ancestor's Tale: A Pilgrimage to the Dawn of Evolution</title>
+        <author>
+            <name>Richard Dawkins</name>
+        </author>
+        <updated>2014-03-13T10:03:08Z</updated>
+        <published>2004-10-27T00:00:00Z</published>
+        <link rel="alternate" type="text/html" hreflang="en" href="http://www.kcls.org/ancerstors-tale-8574685.html"/>
+        <link rel="enclosure" type="audio/ogg" href="http://www.klcs.org/audio-books/ancerstors-tale-8574685.ogg"
+              length="123456789" />
+        <summary>The Ancestor's Tale: A Pilgrimage to the Dawn of Life is a 2004 popular science book by Richard
+            Dawkins, with contributions from Dawkins' research assistant Yan Wong. It follows the path of humans
+            backwards through evolutionary history, meeting humanity's cousins as they converge on common ancestors.
+            Dawkins's longest book to date, it was nominated for the 2005 Aventis Prize for Science Books.
+        </summary>
+    </entry>
+
+</feed>
