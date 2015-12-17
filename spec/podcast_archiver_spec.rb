@@ -5,8 +5,9 @@ describe PodcastArchiver do
 
   # Constants are defined in spec helper
 
-  let(:sample_rss) { generate_rss(TEST_MEDIA) }
-  after (:all) { clean_resources }
+  let(:sample_rss)  { File.join(RES_DIR, "sample.rss") }
+  let(:sample_atom) { File.join(RES_DIR, "sample.atom.rss") }
+  after (:all) { clean_generated_files }
 
   it 'has a version number' do
     expect(PodcastArchiver::VERSION).not_to be nil
@@ -15,7 +16,6 @@ describe PodcastArchiver do
   it 'has a load method which returns a worker object' do
     opts = {quiet: true}
     expect(PodcastArchiver.load(sample_rss, OUT_DIR, opts)).to be_instance_of(PodcastArchiver::BackgroundWorker)
-    clean_resources
   end
 
   it 'shows an error if an invalid dir is given' do
@@ -23,6 +23,10 @@ describe PodcastArchiver do
   end
 
   it 'downloads media files contained in the feed' do
+    opts = {quiet: true}
+    PodcastArchiver.load(sample_rss, OUT_DIR, opts)
+    RssHandler.any_instance.stub_chain()
+
     local_files = Dir.glob "#{OUT_DIR}/*.ogg"
     expect(local_files).to eq ['empty.ogg']
   end
