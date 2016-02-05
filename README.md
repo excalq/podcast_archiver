@@ -1,7 +1,6 @@
 # PodcastArchiver
 
-**[NOTE: This is a work under active development. A usable version should be available be 
-20 December 2015!]**
+**[NOTE: This is a work under active development.]**
 
 A simple tool to archive or mirror an audio or video RSS podcast.
 
